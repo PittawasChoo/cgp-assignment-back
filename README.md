@@ -29,7 +29,6 @@ The folder structure of this app is explained below:
 | ------------------------ | --------------------------------------------------------------------------------------------- |
 | **node_modules** | Contains all npm dependencies. |
 | **dist** | Contains compiled files after running npm run build |
-| **public** | Contains images and other static files |
 | **src** | Contains source code that will be compiled. |
 | **src/auth** | Contains functions to handle event relate with authentication |
 | **src/firebase**| Contains functions to deal with database side (firebase) |
