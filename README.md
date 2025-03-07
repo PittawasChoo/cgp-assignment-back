@@ -13,7 +13,7 @@ git clone https://github.com/PittawasChoo/cgp-assignment-back.git
 - In credential-files/cgp-assignment-back, There are 2 credential files for this repository in there. Bring them in the repository folder that cloned from first step
 - Install dependencies
 ```
-cd flight-booking-react
+cd cgp-assignment-back
 npm install
 ```
 - Run the project
