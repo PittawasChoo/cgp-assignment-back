@@ -11,6 +11,7 @@ git clone https://github.com/PittawasChoo/cgp-assignment-back.git
 ```
 - Download credential folder that will be attached in the hand in email 
 - In credential-files/cgp-assignment-back, There are 2 credential files for this repository in there. Bring them in the repository folder that cloned from first step
+- If you cannot see .env file in the that folder in mac, try cmd + shft + . to show all hidden files
 - Install dependencies
 ```
 cd cgp-assignment-back
