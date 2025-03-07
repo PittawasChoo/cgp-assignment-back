@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
+import { JwtStrategy } from './jwt.strategy';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { FirebaseModule } from '../firebase/firebase.module';
@@ -19,6 +20,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     FirebaseModule,
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService, JwtStrategy],
+  exports: [AuthService, JwtStrategy],
 })
 export class AuthModule {}

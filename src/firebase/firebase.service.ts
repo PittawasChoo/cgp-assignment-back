@@ -34,4 +34,37 @@ export class FirebaseService {
     const docRef = await this.db.collection('users').add({ username });
     return { id: docRef.id, username };
   }
+
+  async createPost(
+    community: string,
+    userId: string,
+    title: string,
+    detail: string,
+  ) {
+    const postRef = await this.db.collection('posts').add({
+      community,
+      createdBy: userId,
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
+      title,
+      detail,
+    });
+
+    return { id: postRef.id, community, createdBy: userId, title, detail };
+  }
+
+  async getAllPosts() {
+    const snapshot = await this.db
+      .collection('posts')
+      .orderBy('timestamp', 'desc')
+      .get();
+    return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  }
+
+  async getUserPosts(userId: string) {
+    const snapshot = await this.db
+      .collection('posts')
+      .where('createdBy', '==', userId)
+      .get();
+    return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  }
 }
